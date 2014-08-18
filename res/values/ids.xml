@@ -28,4 +28,34 @@
   <item type="id" name="return_scan_result"/>
   <item type="id" name="search_book_contents_failed"/>
   <item type="id" name="search_book_contents_succeeded"/>
+  
+  <item type="id" name="tt_tab_bar_container">false</item>
+  <item type="id" name="tt_tab_recommend_bar">false</item>
+  <item type="id" name="tt_tab_best_bar">false</item>
+  <item type="id" name="tt_tab_guide_bar">false</item>
+  <item type="id" name="tt_tab_community_bar">false</item>
+  <item type="id" name="tt_tab_more_bar">false</item>
+  <item type="id" name="tt_tip_area">false</item>
+  <item type="id" name="channel1">false</item>
+  <item type="id" name="channel2">false</item>
+  <item type="id" name="channel3">false</item>
+  <item type="id" name="channel4">false</item>
+  <item type="id" name="channel5">false</item>
+  
+  <!--  
+  <item type="id" name="icon_bar_container1">false</item>
+  <item type="id" name="icon_bar_container2">false</item>
+  <item type="id" name="borrow_bar_icon">false</item>
+  <item type="id" name="qrscan_bar_icon">false</item>
+  <item type="id" name="getpic_bar_icon">false</item>
+  <item type="id" name="note_bar_icon">false</item>
+  <item type="id" name="add_bar_icon">false</item>
+  <item type="id" name="more_bar_icon">false</item>
+  <item type="id" name="icon_ch1">false</item>
+  <item type="id" name="icon_ch2">false</item>
+  <item type="id" name="icon_ch3">false</item>
+  <item type="id" name="icon_ch4">false</item>
+  <item type="id" name="icon_ch5">false</item>
+  <item type="id" name="icon_ch6">false</item>
+    -->
 </resources>

@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.wfi.R;
+import com.wfi.Client.Connect2Server;
 import com.wfi.Client.ConnectServer;
 import com.wfi.Client.ISocketResponse;
 import com.wfi.Client.Packet;
@@ -26,7 +27,7 @@ public class LoginActivity extends Activity {
 	private EditText Passwd;
 	private Button Login;
 	private TextView newUsr;
-	private ConnectServer Loginusr = null;
+	private Connect2Server Loginusr = null;
 	Activity pActivity = null;
 	
 	private String ServerResp="";
@@ -45,7 +46,7 @@ public class LoginActivity extends Activity {
 		Login = (Button)this.findViewById(R.id.login);
 		newUsr = (TextView)this.findViewById(R.id.newusr);
 		
-		Loginusr = new ConnectServer(this.getApplicationContext(), socketListener);
+		Loginusr = new Connect2Server(this.getApplicationContext(), socketListener);
 		
 		Login.setOnClickListener(listener);
 		newUsr.setOnClickListener(listener);
@@ -70,13 +71,13 @@ public class LoginActivity extends Activity {
 			case R.id.login:
 				if(Id.getText().toString() !="" && Passwd.getText().toString() != ""){
 					Log.d(TAG, "Now start login");
-					StartLogin();
-					/*
+					//StartLogin();
+					
 					Intent intent = new Intent();
-					intent.setClass(pActivity, CameraScan.class);
+					intent.setClass(pActivity, MainActivity.class);
 					pActivity.startActivity(intent);
 					finish();
-					*/
+					
 				}else if(Id.getText().toString()==""){
 					Toast.makeText(getApplicationContext(), "用户名不能为空！", Toast.LENGTH_SHORT).show();
 					Id.setFocusable(true);
@@ -106,10 +107,10 @@ public class LoginActivity extends Activity {
 		Loginusr.open("10.118.54.39", 5124);
 		//logindata = loginstr.getBytes("utf-8");
 		//logindata[15] = "qqq".getBytes("utf-8");
-		packet.pack(loginstr);
+		//packet.pack(loginstr);
 		//packet.pack(Id.getText().toString(), 15);
 		//packet.pack(Passwd.getText().toString(), 29);
-		Loginusr.send(packet);
+		//Loginusr.send(packet);
 		//packet.cleanpack();
 	}
 

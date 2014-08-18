@@ -1,5 +1,7 @@
 package com.wfi.Client;
 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -22,15 +24,15 @@ public class ConnectServer {
 	
 	/*https://github.com/zz7zz7zz/android-socket-client*/
 	
-	private String IP = "192.168.137.103";
-	private int PORT = 5124;
+	private String IP = "192.168.1.14";
+	private int PORT = 5129;
 	private final String TAG = "Client";
 	
 	private int state = STATE_CONNECT_START;
 	
 	private Socket socket=null;
-	private OutputStream outStream = null;
-	private InputStream inStream = null;
+	private DataOutputStream outStream = null;
+	private DataInputStream inStream = null;
 	
 	private Thread conn = null;
 	private Thread send = null;
@@ -48,6 +50,20 @@ public class ConnectServer {
 			lock.notifyAll();
 		}
 		return in.getId();
+	}
+	
+	public void sendUTF(String str){
+		try{
+			outStream.write(str.getBytes(), 0, str.length());
+			outStream.flush();
+		}catch(SocketException e1){
+			Log.d(TAG, "SocketException:"+e1.getMessage());
+			e1.printStackTrace();
+			reconn();
+		}catch(Exception e){
+			Log.d(TAG,"Send:Exception="+e.getMessage());
+			e.printStackTrace();
+		}
 	}
 	
 	public void cancel(int reqId)
@@ -200,8 +216,8 @@ public class ConnectServer {
 				if(state==STATE_CONNECT_SUCCESS)
 				{
 					try{
-						outStream=socket.getOutputStream();
-						inStream = socket.getInputStream();
+						outStream=new DataOutputStream(socket.getOutputStream());
+						inStream = new DataInputStream(socket.getInputStream());
 					}catch(IOException e){
 						e.printStackTrace();
 					}
@@ -250,7 +266,7 @@ public class ConnectServer {
 					while(null!=(item=requestQueen.poll()))
 					{
 						Log.d(TAG, "Send:"+item.getPacket().toString());
-						outStream.write(item.getPacket());
+						outStream.write(item.getPacket(), 0, item.getPackLen());
 						outStream.flush();
 						item=null;
 					}
@@ -281,12 +297,26 @@ public class ConnectServer {
 			try{
 				while(state!=STATE_CLOSE&&state==STATE_CONNECT_SUCCESS&&null!=inStream)
 				{
-					byte[] bodyBytes = new byte[20];
+					byte[] bodyBytes = new byte[1024];
 					int offset = 0;
 					int length = 20;
 					int read = 0;
+					String msg=null;
+					Log.d(TAG, "Rec: wait...");
+					//while(true){
+						read = inStream.read(bodyBytes);
+						//if(new String(bodyBytes, 0, read).equals("end"))
+						//if(bodyBytes[read-1]==0x01)
+							//break;
+					//}
 					
-					while((read=inStream.read(bodyBytes, offset, length))>0)
+					Log.d(TAG, "Rec: rec="+bodyBytes.toString());
+					if(null != respListener){
+						respListener.onSocketResponse(new String(bodyBytes, 0, read, "utf-8"));
+					}
+					
+					/*
+					while((read=inStream.readUTF(bodyBytes, offset, length))>0)
 					{
 						Log.d(TAG, "Rec:++++++ length="+length+"  buf="+bodyBytes);
 						if(length-read == 0)
@@ -303,9 +333,15 @@ public class ConnectServer {
 						offset += read;
 						length=20-offset;
 					}
-					reconn(); // �ߵ���һ��˵��������socket����
-					break;
+					*/
+					if(!socket.isConnected()){
+						Log.d(TAG, "Need to reconn");
+						
+						break;
+					}
+					//break;
 				}
+				reconn(); // �ߵ���һ��˵��������socket����
 			}catch(SocketException e1){
 				e1.printStackTrace();	//�ͻ�������socket.close()���������java.net.SocketException: socket closed
 			}catch(Exception e2){

@@ -29,7 +29,6 @@
                 android:layout_marginRight="5dp"
                 android:ems="10"
                 android:background="@drawable/bg_edittext"
-                android:password="true"
                 android:padding="5dp"
                 android:hint="请输入您的手机号" >
                 <requestFocus />

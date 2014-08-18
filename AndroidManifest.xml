@@ -82,6 +82,21 @@
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
             android:windowSoftInputMode="stateAlwaysHidden" >
         </activity>
+        
+        <activity 
+            android:name="com.ericssonlabs.OneActivity" >
+            
+        </activity>
+        
+        <activity 
+            android:name="com.ericssonlabs.MainActivity" >
+            
+        </activity>
+        
+        <activity 
+            android:name="com.ericssonlabs.Mylist_Activity" >
+            
+        </activity>
     </application>
 
 </manifest>

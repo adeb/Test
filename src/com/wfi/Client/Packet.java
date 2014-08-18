@@ -2,64 +2,42 @@ package com.wfi.Client;
 
 public class Packet {
 	private int id=AtomicIntegerUtil.getIncrementID();
-	private byte[] data = new byte[1024];
-	private int curlen=0;
-	private byte[] temp;
+	//private String sendstr;
+	private byte[] PackData = new byte[4096];
+	private int PackLength=0;
 	
 	public int getId()
 	{
 		return id;
 	}
 	
-	public void pack(String txt){
+	public void SetCmd(byte cmd){
+		PackData[0] = cmd;
+	}
+	
+	public void pack(byte[] txt){
 		//data = new byte[1024];
 		//temp = txt.getBytes();
 		//curlen += len;
 		//System.arraycopy(temp, 0, data, len, temp.length);
-		data = txt.getBytes();
+		//data = txt.getBytes();
+		PackLength = 0;
+		int len = txt.length;
+		PackData[1] = (byte)(len>>24);
+		PackData[2] = (byte)(len>>16);
+		PackData[3] = (byte)(len>>8);
+		PackData[4] = (byte)len;
+		
+		System.arraycopy(txt, 0, PackData, 5, len);
+		PackLength = 5+len;
+		//sendstr = txt;
 	}
 	
-	public void setHead(byte head)
-	{
-		data[0] = head;
+	public byte[] getPacket(){
+		return PackData;
 	}
 	
-	public void setCRC(int crc)
-	{
-		data[1] = (byte)(crc>>24);
-		data[2]	= (byte)(crc>>16);
-		data[3] = (byte)(crc>>8);
-		data[4] = (byte)(crc);
-	}
-	
-	public void setLength(int len)
-	{
-		data[5] = (byte)(len>>24);
-		data[6] = (byte)(len>>16);
-		data[7] = (byte)(len>>8);
-		data[8] = (byte)(len);
-	}
-	
-	public void setCmd(int cmd)
-	{
-		data[9] = (byte)(cmd>>24);
-		data[10] = (byte)(cmd>>16);
-		data[11] = (byte)(cmd>>8);
-		data[12] = (byte)(cmd);
-	}
-	
-	public void setDataPack(byte[] buf, int len)
-	{
-		System.arraycopy(buf, 0, data, 13, len);
-	}
-	
-	public byte[] getPacket()
-	{
-		return data;
-	}
-	
-	public void cleanpack(){
-		data=null;
-		curlen=0;
+	public int getPackLen(){
+		return PackLength;
 	}
 }

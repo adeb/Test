@@ -5,4 +5,15 @@
     <string name="app_name">WFI</string>
 	<drawable name="clr_normal">#2ecc71</drawable>
 	<drawable name="clr_pressed">#27ae60</drawable>
+	
+	<string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+	<string name="tt_tab_activity">TTTabActivity</string>
+    <string name="tt_tab_bar_scan">扫描</string>
+    <string name="tt_tab_bar_search">搜索</string>
+    <string name="tt_tab_bar_mylist">列表</string>
+    <string name="tt_tab_bar_message">消息</string>
+    <string name="tt_tab_bar_setting">设置</string>
+    <string name="hello_tabone">hello tab!</string>
+	
 </resources>
