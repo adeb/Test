@@ -18,6 +18,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.PixelFormat;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -34,7 +35,7 @@ import android.widget.Toast;
 public class BarCodeTestActivity extends Activity {
     /** Called when the activity is first created. */
 	private final static String TAG = "WFi";
-	private TextView resultTextView, SelectCP;
+	private TextView resultTextView, SelectCP, backTosetting;
 	private EditText nameEditText, telEditText, addrEditText, goodsEditText, NumbersEditText;
 	private ImageView qrImgImageView;
 	private Button SelectC, SelectP;
@@ -44,9 +45,12 @@ public class BarCodeTestActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.main);
+        setContentView(R.layout.create_myqr_layout);
         //resultTextView = (TextView) this.findViewById(R.id.tv_scan_result);
         //qrStrEditText = (EditText) this.findViewById(R.id.et_qr_string);
+        
+        backTosetting = (TextView)this.findViewById(R.id.back_to_setting);
+        
         qrImgImageView = (ImageView) this.findViewById(R.id.iv_qr_image);
         nameEditText = (EditText)this.findViewById(R.id.usrname);
         telEditText = (EditText)this.findViewById(R.id.telephone);
@@ -56,6 +60,16 @@ public class BarCodeTestActivity extends Activity {
         SelectCP = (TextView)this.findViewById(R.id.selectCP);
         SelectC = (Button)this.findViewById(R.id.companet);
         SelectP = (Button)this.findViewById(R.id.personal);
+        
+        backTosetting.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				backTosetting.setTextColor(Color.parseColor("#2ecc71"));
+				finish();
+			}
+		});
         
         SelectC.setOnClickListener(new View.OnClickListener() {
 			

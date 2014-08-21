@@ -6,6 +6,9 @@
 	<drawable name="clr_normal">#2ecc71</drawable>
 	<drawable name="clr_pressed">#27ae60</drawable>
 	
+	<drawable name="clr_normal2">#FFFFFF</drawable>
+	<drawable name="clr_pressed2">#ECF0F1</drawable>
+	
 	<string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
 	<string name="tt_tab_activity">TTTabActivity</string>

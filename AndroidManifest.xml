@@ -97,6 +97,21 @@
             android:name="com.ericssonlabs.Mylist_Activity" >
             
         </activity>
+        
+        <activity 
+            android:name="com.ericssonlabs.Search_activity" >
+            
+        </activity>
+        
+        <activity 
+            android:name="com.ericssonlabs.message_activity" >
+            
+        </activity>
+        
+        <activity 
+            android:name="com.ericssonlabs.Setting_Activity" >
+            
+        </activity>
     </application>
 
 </manifest>
