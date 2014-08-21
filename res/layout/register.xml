@@ -17,7 +17,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="50dp"
-            android:background="#2ecc71"
+            android:background="#FFFFFF"
             android:orientation="vertical" >
 
             <EditText
@@ -77,22 +77,28 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp" >
+                android:layout_marginTop="10dp" >
 
                 <Button
                     android:id="@+id/newregister"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
                     android:layout_weight="1"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="2.5dp"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/login_button_selector"
                     android:text="注删" />
 
                 <Button
                     android:id="@+id/reglogin"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
                     android:layout_weight="1"
+                    android:layout_marginLeft="2.5dp"
+                    android:layout_marginRight="5dp"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/login_button_selector"
                     android:text="登陆" />
 
             </LinearLayout>

@@ -97,7 +97,7 @@ public class CreateBarCodeActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				//鎵撳紑鎵弿鐣岄潰鎵弿鏉″舰鐮佹垨浜岀淮鐮�
+				//
 				Intent openCameraIntent = new Intent(BarCodeTestActivity.this,CaptureActivity.class);
 				startActivityForResult(openCameraIntent, 0);
 			}
@@ -111,8 +111,12 @@ public class CreateBarCodeActivity extends Activity {
 				try {
 					String contentString = "姓名："+nameEditText.getText().toString()+";"+"电话："+telEditText.getText().toString()+";"+selectcp+addrEditText.getText().toString()
 							+";"+"物品:"+goodsEditText.getText().toString()+";"+"数量："+NumbersEditText.getText().toString();
-					if (!contentString.equals(";;")) {
-						//鏍规嵁瀛楃涓茬敓鎴愪簩缁寸爜鍥剧墖骞舵樉绀哄湪鐣岄潰涓婏紝绗簩涓弬鏁颁负鍥剧墖鐨勫ぇ灏忥紙350*350锛�
+					if (nameEditText.getText().toString().equals("")
+							||telEditText.getText().toString().equals("")
+							||addrEditText.getText().toString().equals("")
+							||goodsEditText.getText().toString().equals("")
+							||NumbersEditText.getText().toString().equals("")) {
+						
 						Bitmap qrCodeBitmap = EncodingHandler.createQRCode(contentString, 350);
 						//qrImgImageView.setImageBitmap(qrCodeBitmap);
 						MyBitmap.setMyBitmap(qrCodeBitmap);
@@ -123,6 +127,7 @@ public class CreateBarCodeActivity extends Activity {
 						Intent intent = new Intent();
 						intent.setClass(getApplicationContext(), ShowQR.class);
 						startActivity(intent);
+						finish();
 						//Toast.makeText(getApplicationContext(), "Bitmap size = "+bitmaparray.length, Toast.LENGTH_SHORT).show();
 					}else {
 						Toast.makeText(CreateBarCodeActivity.this, "Text can not be empty", Toast.LENGTH_SHORT).show();
@@ -154,7 +159,7 @@ public class CreateBarCodeActivity extends Activity {
 		  f.createNewFile();
 	  } catch (IOException e) {
 		  // TODO Auto-generated catch block
-		  Log.d(TAG,"在保存图片时出错："+e.toString());
+		  Log.d(TAG,"Save pictures Error："+e.toString());
 		  Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_SHORT).show();
 	  }
 	  FileOutputStream fOut = null;
