@@ -27,7 +27,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" >
         <activity
-            android:name="com.ericssonlabs.BarCodeTestActivity"
+            android:name="com.ericssonlabs.CreateBarCodeActivity"
             android:label="@string/app_name" >
             <intent-filter >
                 <action android:name="com.ericssonlabs.BarCodeTestActivity"/>
@@ -104,7 +104,7 @@
         </activity>
         
         <activity 
-            android:name="com.ericssonlabs.message_activity" >
+            android:name="com.ericssonlabs.Message_Activity" >
             
         </activity>
         

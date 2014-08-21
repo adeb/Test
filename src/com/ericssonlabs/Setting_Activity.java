@@ -41,7 +41,7 @@ public class Setting_Activity extends Activity implements OnClickListener{
 			break;
 		case R.id.btn_myqrcode:
 			Intent intent = new Intent();
-			intent.setClass(getApplicationContext(), BarCodeTestActivity.class);
+			intent.setClass(getApplicationContext(), CreateBarCodeActivity.class);
 			startActivity(intent);
 			break;
 		default:
