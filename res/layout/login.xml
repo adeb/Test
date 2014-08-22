@@ -82,7 +82,6 @@
                     android:layout_weight="1"
                     android:textColor="#2ecc71"
                     android:textSize="20dp"
-                    android:background="@drawable/text_color_selector"
                     android:text="注册" />
 
                 <TextView
@@ -93,7 +92,6 @@
                     android:gravity="right"
                     android:textColor="#2ecc71"
                     android:textSize="20dp"
-                    android:background="@drawable/text_color_selector"
                     android:text="忘记密码" />
 
             </LinearLayout>
