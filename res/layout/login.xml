@@ -78,18 +78,22 @@
                 <TextView
                     android:id="@+id/newusr"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="30dp"
                     android:layout_weight="1"
                     android:textColor="#2ecc71"
+                    android:textSize="20dp"
+                    android:background="@drawable/text_color_selector"
                     android:text="注册" />
 
                 <TextView
                     android:id="@+id/textView2"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="30dp"
                    	android:layout_weight="1"
                     android:gravity="right"
                     android:textColor="#2ecc71"
+                    android:textSize="20dp"
+                    android:background="@drawable/text_color_selector"
                     android:text="忘记密码" />
 
             </LinearLayout>
