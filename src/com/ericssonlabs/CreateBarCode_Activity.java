@@ -32,7 +32,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class CreateBarCodeActivity extends Activity {
+public class CreateBarCode_Activity extends Activity {
     /** Called when the activity is first created. */
 	private final static String TAG = "WFi";
 	private TextView resultTextView, SelectCP, backTosetting;
@@ -125,12 +125,12 @@ public class CreateBarCodeActivity extends Activity {
 						generateQRCodeButton.setText("Bitmap size = "+bitmaparray.length);
 						
 						Intent intent = new Intent();
-						intent.setClass(getApplicationContext(), ShowQR.class);
+						intent.setClass(getApplicationContext(), ShowQR_Activity.class);
 						startActivity(intent);
 						finish();
 						//Toast.makeText(getApplicationContext(), "Bitmap size = "+bitmaparray.length, Toast.LENGTH_SHORT).show();
 					}else {
-						Toast.makeText(CreateBarCodeActivity.this, "Text can not be empty", Toast.LENGTH_SHORT).show();
+						Toast.makeText(CreateBarCode_Activity.this, "Text can not be empty", Toast.LENGTH_SHORT).show();
 					}
 					
 				} catch (WriterException e) {

@@ -27,7 +27,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" >
         <activity
-            android:name="com.ericssonlabs.CreateBarCodeActivity"
+            android:name="com.ericssonlabs.CreateBarCode_Activity"
             android:label="@string/app_name" >
             <intent-filter >
                 <action android:name="com.ericssonlabs.BarCodeTestActivity"/>
@@ -42,7 +42,7 @@
         </activity>
         
         <activity
-            android:name="com.ericssonlabs.CameraScan"
+            android:name="com.ericssonlabs.CameraScan_Activity"
             android:label="@string/app_name" >
             <intent-filter >
                 <action android:name="com.ericssonlabs.CameraScan"/>
@@ -50,7 +50,7 @@
         </activity>
         
         <activity
-            android:name="com.ericssonlabs.ShowQR"
+            android:name="com.ericssonlabs.ShowQR_Activity"
             android:label="@string/app_name" >
             <intent-filter >
                 <action android:name="com.ericssonlabs.ShowQR"/>
@@ -58,7 +58,7 @@
         </activity>
         
         <activity
-            android:name="com.ericssonlabs.RegisterActivity"
+            android:name="com.ericssonlabs.Register_Activity"
             android:label="@string/app_name" >
             <intent-filter >
                 <action android:name="com.ericssonlabs.RegisterActivity"/>
@@ -66,7 +66,7 @@
         </activity>
         
         <activity
-            android:name="com.ericssonlabs.LoginActivity"
+            android:name="com.ericssonlabs.Login_Activity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -99,7 +99,7 @@
         </activity>
         
         <activity 
-            android:name="com.ericssonlabs.Search_activity" >
+            android:name="com.ericssonlabs.Search_Activity" >
             
         </activity>
         

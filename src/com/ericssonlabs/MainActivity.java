@@ -63,8 +63,8 @@ public class MainActivity extends TabActivity implements OnClickListener {
 	}
 	
 	private void prepareIntent() {
-		mHome = new Intent(this, CameraScan.class);
-		mTwo = new Intent(this, Search_activity.class);
+		mHome = new Intent(this, CameraScan_Activity.class);
+		mTwo = new Intent(this, Search_Activity.class);
 		mMain = new Intent(this, Mylist_Activity.class);
 		mFour = new Intent(this, Message_Activity.class);
 		mFive = new Intent(this, Setting_Activity.class);
