@@ -6,9 +6,11 @@ import java.util.Map;
 
 import com.ericssonlabs.MyBorListItem;
 import com.ericssonlabs.MyListItem;
+import com.ericssonlabs.MylistAdapter_new0;
 import com.wfi.R;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -18,8 +20,9 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
-public class Mylist_Activity extends Activity implements OnClickListener {
+public class Mylist_Activity extends Activity implements OnClickListener, OnItemClickListener {
 
 	/**
 	 * ���ذ�ť
@@ -49,11 +52,14 @@ public class Mylist_Activity extends Activity implements OnClickListener {
 	 * ListView�б�
 	 */
 	private ListView lvListView = null;
+	
+	private boolean clickflag = false;
 
 	/**
 	 * �������
 	 */
 	private MyListAdapter adpAdapter = null;
+	private MylistAdapter_new0 adpAdapter_new0 = null;
 	private MyBorListAdapter boradpAdapter = null;
 
 	@Override
@@ -65,7 +71,8 @@ public class Mylist_Activity extends Activity implements OnClickListener {
 		initView();
 
 		// ��ʼ���ؼ�
-		initData();
+		//initData();
+		initData_new0();
 
 	}
 
@@ -84,7 +91,7 @@ public class Mylist_Activity extends Activity implements OnClickListener {
 		btnAdd.setOnClickListener(this);
 
 		lvListView = (ListView) findViewById(R.id.lvListView);
-		//lvListView.setOnItemClickListener(this);
+		lvListView.setOnItemClickListener(this);
 
 	}
 
@@ -119,6 +126,37 @@ public class Mylist_Activity extends Activity implements OnClickListener {
 		adpAdapter = new MyListAdapter(this, demoDatas);
 
 		lvListView.setAdapter(adpAdapter);
+		
+		clickflag = true;
+	}
+	
+	private void initData_new0() {
+
+		// ģ�������
+		
+		List<MyListItem_new0> demoDatas = new ArrayList<MyListItem_new0>();
+
+		demoDatas.add(new MyListItem_new0("张三", 5, 3, true));
+		demoDatas.add(new MyListItem_new0("李四", 5, 3, true));
+		demoDatas.add(new MyListItem_new0("王五", 5, 3, false));
+		demoDatas.add(new MyListItem_new0("赵六", 5, 3, true));
+		demoDatas.add(new MyListItem_new0("赵六", 5, 3, true));
+		demoDatas.add(new MyListItem_new0("赵六", 5, 3, true));
+		demoDatas.add(new MyListItem_new0("赵六", 5, 3, true));
+		demoDatas.add(new MyListItem_new0("赵六", 5, 3, true));
+		demoDatas.add(new MyListItem_new0("赵六", 5, 3, true));
+		demoDatas.add(new MyListItem_new0("赵六", 5, 3, true));
+		demoDatas.add(new MyListItem_new0("赵六", 5, 3, true));
+		demoDatas.add(new MyListItem_new0("赵六", 5, 3, true));
+		demoDatas.add(new MyListItem_new0("赵六", 5, 3, true));
+		demoDatas.add(new MyListItem_new0("赵六", 5, 3, true));
+		demoDatas.add(new MyListItem_new0("赵六", 5, 3, true));
+
+		adpAdapter_new0 = new MylistAdapter_new0(this, demoDatas);
+
+		lvListView.setAdapter(adpAdapter_new0);
+		
+		clickflag = true;
 	}
 
 	/**
@@ -131,30 +169,8 @@ public class Mylist_Activity extends Activity implements OnClickListener {
 		 * ��������ص�ʱ��
 		 */
 		if (v == btnMylist) {
-			List<MyListItem> demoDatas = new ArrayList<MyListItem>();
-
-			demoDatas.add(new MyListItem(1, "张三", 5, 3, 2, true));
-			demoDatas.add(new MyListItem(2, "李四", 5, 3, 2, true));
-			demoDatas.add(new MyListItem(3, "王五", 5, 3, 2, false));
-			demoDatas.add(new MyListItem(4, "赵六", 5, 3, 2, true));
-			demoDatas.add(new MyListItem(4, "赵六", 5, 3, 2, true));
-			demoDatas.add(new MyListItem(4, "赵六", 5, 3, 2, true));
-			demoDatas.add(new MyListItem(4, "赵六", 5, 3, 2, true));
-			demoDatas.add(new MyListItem(4, "赵六", 5, 3, 2, true));
-			demoDatas.add(new MyListItem(4, "赵六", 5, 3, 2, true));
-			demoDatas.add(new MyListItem(4, "赵六", 5, 3, 2, true));
-			demoDatas.add(new MyListItem(4, "赵六", 5, 3, 2, true));
-			demoDatas.add(new MyListItem(4, "赵六", 5, 3, 2, true));
-			demoDatas.add(new MyListItem(4, "赵六", 5, 3, 2, true));
-			demoDatas.add(new MyListItem(4, "赵六", 5, 3, 2, true));
-			demoDatas.add(new MyListItem(4, "赵六", 5, 3, 2, true));
-			demoDatas.add(new MyListItem(4, "赵六", 5, 3, 2, true));
-			demoDatas.add(new MyListItem(4, "赵六", 5, 3, 2, true));
-			demoDatas.add(new MyListItem(4, "赵六", 5, 3, 2, true));
-
-			adpAdapter = new MyListAdapter(this, demoDatas);
-
-			lvListView.setAdapter(adpAdapter);
+			//initData();
+			initData_new0();
 		}
 
 		
@@ -189,11 +205,24 @@ public class Mylist_Activity extends Activity implements OnClickListener {
 			boradpAdapter = new MyBorListAdapter(getApplicationContext(), demoDatas);
 
 			lvListView.setAdapter(boradpAdapter);
+			
+			clickflag = false;
 			//lvListView.setCacheColorHint(Color.parseColor("#00000000"));
 			//lvListView.setSelector(Color.parseColor("#00000000"));
 		}
 
 		
+	}
+
+	@Override
+	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+		// TODO Auto-generated method stub
+		//Toast.makeText(getApplicationContext(), "click", Toast.LENGTH_SHORT).show();
+		if(clickflag == true){
+			Intent intent = new Intent();
+			intent.setClass(getApplicationContext(), MylistInfo_Activity.class);
+			startActivity(intent);
+		}
 	}
 
 	/**

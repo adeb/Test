@@ -6,7 +6,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dip"
+        android:layout_height="40dip"
         android:background="#2ecc71"
         android:orientation="horizontal" >
 
@@ -75,6 +75,7 @@
             android:id="@+id/lvListView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginBottom="15dp"
             android:divider="#DADBDA"
             android:dividerHeight="1px"
             android:cacheColorHint="#00000000"

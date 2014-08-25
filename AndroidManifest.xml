@@ -112,6 +112,11 @@
             android:name="com.ericssonlabs.Setting_Activity" >
             
         </activity>
+        
+        <activity 
+            android:name="com.ericssonlabs.MylistInfo_Activity" >
+            
+        </activity>
     </application>
 
 </manifest>
