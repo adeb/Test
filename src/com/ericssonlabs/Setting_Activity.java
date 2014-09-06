@@ -77,7 +77,10 @@ public class Setting_Activity extends Activity implements OnClickListener{
 				Toast.makeText(getApplicationContext(), "正在开发中！", Toast.LENGTH_SHORT).show();
 				break;
 			case 2:
-				Toast.makeText(getApplicationContext(), "正在开发中！", Toast.LENGTH_SHORT).show();
+				//Toast.makeText(getApplicationContext(), "正在开发中！", Toast.LENGTH_SHORT).show();
+				Intent SmartHomeIntent = new Intent();
+				SmartHomeIntent.setClass(getApplicationContext(), SmartHome_Activity.class);
+				startActivity(SmartHomeIntent);
 				break;
 			case 3:
 				Intent intent = new Intent();
