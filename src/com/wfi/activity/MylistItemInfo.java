@@ -1,4 +1,4 @@
-package com.ericssonlabs;
+package com.wfi.activity;
 
 public class MylistItemInfo {
 	private String Myl_title;

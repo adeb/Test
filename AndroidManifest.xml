@@ -27,7 +27,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" >
         <activity
-            android:name="com.ericssonlabs.CreateBarCode_Activity"
+            android:name="com.wfi.activity.CreateBarCode_Activity"
             android:label="@string/app_name" >
             <intent-filter >
                 <action android:name="com.ericssonlabs.BarCodeTestActivity"/>
@@ -42,7 +42,7 @@
         </activity>
         
         <activity
-            android:name="com.ericssonlabs.CameraScan_Activity"
+            android:name="com.wfi.activity.CameraScan_Activity"
             android:label="@string/app_name" >
             <intent-filter >
                 <action android:name="com.ericssonlabs.CameraScan"/>
@@ -50,7 +50,7 @@
         </activity>
         
         <activity
-            android:name="com.ericssonlabs.ShowQR_Activity"
+            android:name="com.wfi.activity.ShowQR_Activity"
             android:label="@string/app_name" >
             <intent-filter >
                 <action android:name="com.ericssonlabs.ShowQR"/>
@@ -58,7 +58,7 @@
         </activity>
         
         <activity
-            android:name="com.ericssonlabs.Register_Activity"
+            android:name="com.wfi.activity.Register_Activity"
             android:label="@string/app_name" >
             <intent-filter >
                 <action android:name="com.ericssonlabs.RegisterActivity"/>
@@ -66,7 +66,7 @@
         </activity>
         
         <activity
-            android:name="com.ericssonlabs.Login_Activity"
+            android:name="com.wfi.activity.Login_Activity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -84,42 +84,42 @@
         </activity>
         
         <activity 
-            android:name="com.ericssonlabs.OneActivity" >
+            android:name="com.wfi.activity.OneActivity" >
             
         </activity>
         
         <activity 
-            android:name="com.ericssonlabs.MainActivity" >
+            android:name="com.wfi.activity.MainActivity" >
             
         </activity>
         
         <activity 
-            android:name="com.ericssonlabs.Mylist_Activity" >
+            android:name="com.wfi.activity.Mylist_Activity" >
             
         </activity>
         
         <activity 
-            android:name="com.ericssonlabs.Search_Activity" >
+            android:name="com.wfi.activity.Search_Activity" >
             
         </activity>
         
         <activity 
-            android:name="com.ericssonlabs.Message_Activity" >
+            android:name="com.wfi.activity.Message_Activity" >
             
         </activity>
         
         <activity 
-            android:name="com.ericssonlabs.Setting_Activity" >
+            android:name="com.wfi.activity.Setting_Activity" >
             
         </activity>
         
         <activity 
-            android:name="com.ericssonlabs.MylistInfo_Activity" >
+            android:name="com.wfi.activity.MylistInfo_Activity" >
             
         </activity>
         
         <activity 
-            android:name="com.ericssonlabs.SmartHome_Activity" >
+            android:name="com.wfi.activity.SmartHome_Activity" >
             
         </activity>
     </application>

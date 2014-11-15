@@ -1,10 +1,10 @@
-package com.ericssonlabs;
+package com.wfi.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
 
-import com.ericssonlabs.WiperSwitch.OnChangedListener;
 import com.wfi.R;
+import com.wfi.activity.WiperSwitch.OnChangedListener;
 
 public class SmartHome_Activity extends Activity implements OnChangedListener{
 

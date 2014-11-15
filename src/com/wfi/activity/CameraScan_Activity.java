@@ -1,4 +1,4 @@
-package com.ericssonlabs;
+package com.wfi.activity;
 
 import android.app.Activity;
 import android.content.Intent;

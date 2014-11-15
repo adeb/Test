@@ -59,7 +59,7 @@
                 android:layout_marginLeft="18dp"
                 android:text="TextView" />
             
-            <com.ericssonlabs.WiperSwitch
+            <com.wfi.activity.WiperSwitch
                 android:id="@+id/wiperSwitch1"
                 android:layout_width="112dp"
                 android:layout_height="50dp"

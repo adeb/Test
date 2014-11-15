@@ -1,9 +1,9 @@
-package com.ericssonlabs;
+package com.wfi.activity;
 
 import java.util.List;
 
-import com.ericssonlabs.MyListAdapter.ViewHolder;
 import com.wfi.R;
+import com.wfi.activity.MyListAdapter.ViewHolder;
 
 import android.content.Context;
 import android.view.LayoutInflater;

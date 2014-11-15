@@ -1,4 +1,4 @@
-package com.ericssonlabs;
+package com.wfi.activity;
 
 import com.wfi.R;
 import com.zxing.activity.CaptureActivity;

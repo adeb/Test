@@ -1,13 +1,13 @@
-package com.ericssonlabs;
+package com.wfi.activity;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import com.ericssonlabs.MyBorListItem;
-import com.ericssonlabs.MyListItem;
-import com.ericssonlabs.MylistAdapter_new0;
 import com.wfi.R;
+import com.wfi.activity.MyBorListItem;
+import com.wfi.activity.MyListItem;
+import com.wfi.activity.MylistAdapter_new0;
 
 import android.app.Activity;
 import android.content.Intent;

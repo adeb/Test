@@ -1,10 +1,9 @@
-package com.ericssonlabs;
+package com.wfi.activity;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.ericssonlabs.MyListAdapter.ViewHolder;
 import com.wfi.R;
 
 import android.content.Context;
@@ -16,7 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MylistAdapter_new0 extends BaseAdapter{
+public class MyListAdapter extends BaseAdapter{
 	private LayoutInflater mInflater; 
 	/**
 	 * �����Ķ���
@@ -26,16 +25,27 @@ public class MylistAdapter_new0 extends BaseAdapter{
 	/**
 	 * ���ݼ���
 	 */
-	private List<MyListItem_new0> datas = null;
+	private List<MyListItem> datas = null;
 	
 	private Map<Integer, Boolean> isCheckMap = new HashMap<Integer, Boolean>();
 	
-	public MylistAdapter_new0(Context context, List<MyListItem_new0> datas){
+	public MyListAdapter(Context context, List<MyListItem> datas){
 		this.context = context;
 		this.datas = datas;
 		this.mInflater = LayoutInflater.from(context);
 		
 		//configCheckMap(false);
+	}
+	
+	/**
+	 * ����,Ĭ�������,������Ŀ����û��ѡ�е�.������г�ʼ��
+	 */
+	public void configCheckMap(boolean bool) {
+
+		for (int i = 0; i < datas.size(); i++) {
+			isCheckMap.put(i, bool);
+		}
+
 	}
 
 	@Override
@@ -45,41 +55,53 @@ public class MylistAdapter_new0 extends BaseAdapter{
 	}
 
 	@Override
-	public Object getItem(int arg0) {
+	public Object getItem(int position) {
 		// TODO Auto-generated method stub
+		//return datas.get(position);
 		return null;
 	}
 
 	@Override
-	public long getItemId(int arg0) {
+	public long getItemId(int position) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public View getView(int position, View convertView, ViewGroup parent) {
+	public View getView(final int position, View convertView, ViewGroup parent) {
 		// TODO Auto-generated method stub
 		ViewHolder holder = null;
 		//ViewGroup layout = null;
-		MyListItem_new0 bean = datas.get(position);
-		
+		MyListItem bean = datas.get(position);
+		/**
+		 * ����ListView ���Ż�
+		 */
 		if (convertView == null) {
 			holder=new ViewHolder();
-			convertView = mInflater.inflate(R.layout.mylist_item_layout_new0, null);
+			convertView = mInflater.inflate(R.layout.mylist_item_layout, null);
+			/*
+			 * ����ÿһ��item���ı�
+			 */
+			holder.gNumber = (TextView)convertView.findViewById(R.id.number);
+			holder.gTitle = (TextView) convertView.findViewById(R.id.title);
+			holder.gTotalnumber = (TextView)convertView.findViewById(R.id.totalnumber);
+			holder.gCurnumber = (TextView)convertView.findViewById(R.id.curnumber);
+			holder.gLoannumber = (TextView)convertView.findViewById(R.id.loannumber);
+			holder.cbClick = (ImageView) convertView.findViewById(R.id.onclick);
 			
-			holder.gTitle = (TextView) convertView.findViewById(R.id.g_title);
-			holder.gTotalnumber = (TextView)convertView.findViewById(R.id.g_total);
-			holder.gLoannumber = (TextView)convertView.findViewById(R.id.g_loannum);
-			holder.cbClick = (ImageView) convertView.findViewById(R.id.g_click);		
 			convertView.setTag(holder);
 		} else {
 			holder = (ViewHolder)convertView.getTag();
 		}
 		
-		holder.gTitle.setText("物品："+bean.getTitle());
+		holder.gNumber.setText(Integer.toString(bean.getNumber()));
+		holder.gTitle.setText(bean.getTitle());
 		holder.gTotalnumber.setText("总数："+Integer.toString(bean.getTotalNumber()));
+		holder.gCurnumber.setText("在库："+Integer.toString(bean.getCurNumber()));
 		holder.gLoannumber.setText("借出："+Integer.toString(bean.getLoanNumber()));
-		
+		/*
+		 * ��ø�item �Ƿ�������
+		 */
 		final boolean canClick = bean.isCanClick();
 		final String str = bean.getTitle();
 		
@@ -101,26 +123,31 @@ public class MylistAdapter_new0 extends BaseAdapter{
 		return convertView;
 	}
 	
-	public void add(MyListItem_new0 bean) {
+	/**
+	 * ����һ���ʱ��
+	 */
+	public void add(MyListItem bean) {
 		this.datas.add(0, bean);
 
 		// ��������Ŀ��Ϊ��ѡ��
 		//configCheckMap(false);
 	}
 	
-	public List<MyListItem_new0> getDatas() {
+	public List<MyListItem> getDatas() {
 		return datas;
 	}
 	
 	public static class ViewHolder {
 
-		public ImageView img = null;
+		public TextView gNumber = null;
 		public TextView gTitle = null;
 		public TextView gTotalnumber = null;
+		public TextView gCurnumber = null;
 		public TextView gLoannumber = null;
 		public ImageView cbClick = null;
 		
 		public Object data = null;
 
 	}
+
 }

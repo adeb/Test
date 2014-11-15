@@ -1,4 +1,4 @@
-package com.ericssonlabs;
+package com.wfi.activity;
 
 import java.util.Timer;
 import java.util.TimerTask;

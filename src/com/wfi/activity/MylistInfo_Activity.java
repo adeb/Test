@@ -1,4 +1,4 @@
-package com.ericssonlabs;
+package com.wfi.activity;
 
 import java.util.ArrayList;
 import java.util.List;
