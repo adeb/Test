@@ -2,7 +2,7 @@
 <resources>
 
     <string name="hello">Hello World, BarCodeTestActivity!</string>
-    <string name="app_name">WFI</string>
+    <string name="app_name">找神码</string>
 	<drawable name="clr_normal">#2ecc71</drawable>
 	<drawable name="clr_pressed">#27ae60</drawable>
 	
